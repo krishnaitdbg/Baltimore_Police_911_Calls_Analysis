@@ -1,0 +1,75 @@
+---
+title: "BPD_911_Calls_Analysis"
+author: "Krishna"
+date: "2/4/2019"
+output:
+  html_document: 
+    keep_md: yes
+---
+
+## Summary
+
+This Shiny Web App analyzes Baltimore police department 911 calls data. See below for further details.
+
+  1. Data source for this anaylsis is from Baltimore Police Data Gov site.
+  2. Baltimore 911 calls data is available from year 2015 to current date and this app can analyze all 
+     data depening upon available resources.
+  3. This Application helps in answering below questions regarding Baltimore 911 calls data.
+     a. What type of 911 calls were made over given period?
+     b. How many 911 calls data were made per day over given period?
+     c. How many 911 calls data were made per hour over given period?
+     d. From which incident location, these 911 calls were made?
+
+## Load necessary libraries
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(lubridate)
+library(jsonlite)
+```
+
+## Data used for this analysis
+
+Fetch JSON format data from Baltimore 911 calls data gov site.
+
+```{r}
+p911data <- fromJSON(URLencode("https://data.baltimorecity.gov/resource/m8g9-abgb.json?$where=date_trunc_ymd(calldatetime) between '2015-01-01' AND '2019-02-28'&$limit=5000000"),flatten=TRUE) 
+dim(p911data)
+```
+
+## Understand data and sample data
+
+```{r}
+str(p911data)
+head(p911data)
+```
+
+## Explore data
+
+```{r}
+p911data %>% group_by(callyear=substr(calldatetime,1,4)) %>% summarise(n())
+```
+
+## Important Links
+
+### Data Source (JSON Format) 
+
+Baltimore 911 Calls json data api end point link is provided below.
+
+https://data.baltimorecity.gov/resource/m8g9-abgb.json
+
+### Source Code
+
+Baltimore 911 Calls analysis Source code is uploaded to Github and link is provided below.
+
+https://github.com/krishnaitdbg/Baltimore_Police_911_Calls_Analysis
+
+### Analysis output 
+
+Shiny web App is uploaded to Shiny server and link is provided below.
+
+https://krishnaitdbg.shinyapps.io/BPolice_911_Call_Data_Analysis/
+
+
+Thank you for the visit.
