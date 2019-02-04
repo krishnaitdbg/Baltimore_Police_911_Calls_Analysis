@@ -267,5 +267,10 @@ Shiny web App is uploaded to Shiny server and link is provided below.
 
 https://krishnaitdbg.shinyapps.io/BPolice_911_Call_Data_Analysis/
 
+### Supporting HTML documentation 
+
+Shiny web App is uploaded to Shiny server and link is provided below.
+
+https://krishnaitdbg.github.io/Baltimore_Police_911_Calls_Analysis/BPD_911_Calls_Analysis.html
 
 Thank you for the visit.
