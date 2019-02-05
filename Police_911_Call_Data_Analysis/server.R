@@ -84,7 +84,7 @@ shinyServer(function(input, output, session) {
                          margin=list(l=45,r=20,b=55,t=30,pad=0),
                          font=list(size=10),
                          yaxis=list(title="Calls per Day Count",tickfont=list(size=8)),
-                         xaxis=list(title="Calls Count",tickfont=list(size=9),tickangle=45,tickformat="%b %d %Y"))
+                         xaxis=list(title="Day",tickfont=list(size=9),tickangle=45,tickformat="%b %d %Y"))
               })  
               
               # Prepare and render "Plot for Calls Per Hour"
@@ -103,7 +103,7 @@ shinyServer(function(input, output, session) {
                          margin=list(l=45,r=20,b=40,t=30,pad=0),
                          font=list(size=9),
                          yaxis=list(title="Calls per Hour Count",tickfont=list(size=8)),
-                         xaxis=list(title="Calls Count",tickfont=list(size=7),tickangle=45))
+                         xaxis=list(title="Time",tickfont=list(size=7),tickangle=45))
               })  
               
               # Prepare and render "Map Plot"

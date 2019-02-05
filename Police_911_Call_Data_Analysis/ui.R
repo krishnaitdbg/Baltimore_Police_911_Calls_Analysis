@@ -41,6 +41,12 @@ shinyUI(fluidPage(
                  tags$div(class="header", checked=NA,
                           tags$p("Data Source:"),
                           tags$a(href="https://data.baltimorecity.gov/Public-Safety/911-Police-Calls-for-Service/xviu-ezkt", "Open Baltimore Data Gov Site Click Here!")
+                 ),br(),
+                 #--------------------------------------------------------------------
+                 # adding the code source tag to the sidebar            
+                 tags$div(class="header", checked=NA,
+                          tags$p("Code Source:"),
+                          tags$a(href="https://github.com/krishnaitdbg/Baltimore_Police_911_Calls_Analysis", "Code Source Click Here!")
                  )
                 ),
     mainPanel(
